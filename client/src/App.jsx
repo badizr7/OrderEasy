@@ -1,5 +1,6 @@
 import './App.css';
 import Login from './Components/Login/Login';
+import Dashboard from './Components/Dashboard/Dashboard'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -10,12 +11,17 @@ import {
 
 // Crear el enrutador
 const router = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-      <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/login" element={<div><Login/></div>} />
-    </>
-  )
+  createRoutesFromElements([
+    {
+      path: '/login',
+      element: <div><Login/></div>
+    },
+    {
+      path: '/dashboard',
+      element: <div><Dashboard/></div>
+    }
+
+  ])
 );
 
 function App() {
