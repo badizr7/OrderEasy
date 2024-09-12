@@ -1,0 +1,122 @@
+:root {
+    --PrimaryColor: hsl(210, 100%, 50%);
+    --HoverColor: hsl(210, 100%, 60%);
+    --bgColor: hsl(0, 0%, 94%);
+    --textColor: hsl(0, 0%, 20%);
+    --greyText: hsl(0, 0%, 60%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --normalFontSize: 1rem;
+    --smallFontSize: 0.875rem;
+  }
+  
+  .sideBar {
+    background: var(--bgColor);
+    width: 250px;
+    height: 100vh;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+  
+    .logoDiv {
+      text-align: center;
+      margin-bottom: 2rem;
+  
+      img {
+        max-width: 80%;
+        height: auto;
+      }
+    }
+  
+    .menuDiv {
+      .divTitle {
+        text-align: center;
+        font-size: var(--smallFontSize);
+        color: var(--textColor);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+  
+      .menuList {
+        list-style-type: none;
+        padding: 0;
+  
+        .listItem {
+          margin-bottom: 0.5rem;
+  
+          .menuLink {
+            display: flex;
+            align-items: center;
+            color: var(--greyText);
+            text-decoration: none;
+            padding: 0.75rem 2.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s ease;
+  
+            &:hover {
+              background-color: var(--HoverColor);
+              color: var(--whiteColor);
+            }
+  
+            &.active {
+              background-color: var(--PrimaryColor);
+              color: var(--whiteColor);
+            }
+  
+            .icon {
+              margin-right: 0.75rem;
+              font-size: 1.25rem;
+            }
+  
+            .smallText {
+              font-size: var(--normalFontSize);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Diseño Responsive
+  @media screen and (max-width: 768px) {
+    .sideBar {
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+  
+      .logoDiv {
+        margin-bottom: 1rem;
+  
+        img {
+          max-width: 120px;
+        }
+      }
+  
+      .menuDiv {
+        .menuList {
+          display: flex;
+          justify-content: space-around;
+  
+          .listItem {
+            margin-bottom: 0;
+  
+            .menuLink {
+              flex-direction: column;
+              align-items: center;
+              padding: 0.5rem;
+  
+              .icon {
+                margin-right: 0;
+                margin-bottom: 0.25rem;
+              }
+  
+              .smallText {
+                font-size: var(--smallFontSize);
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -90,6 +90,10 @@ const Login = () => {
               <AiOutlineSwapRight className='icon'/>
             </button>
 
+            <div>
+              <link rel="stylesheet" href="" />
+            </div>
+
             <span className='forgotPassword'>
               ¿Olvidaste tu contraseña? <a className='forgotpassword' href="">Click Aquí</a>
             </span>

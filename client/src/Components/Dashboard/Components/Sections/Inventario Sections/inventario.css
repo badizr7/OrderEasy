@@ -1,0 +1,99 @@
+.inventario-container {
+  padding: 1.5rem;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+}
+.inventario-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.inventario-container .header .crear-producto-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.inventario-container .header .crear-producto-btn:hover {
+  background-color: #45a049;
+}
+.inventario-container .header .crear-producto-btn .icon {
+  margin-right: 0.5rem;
+}
+.inventario-container .header .search-filter {
+  display: flex;
+  gap: 1rem;
+}
+.inventario-container .header .search-filter .categorias-select {
+  width: 180px;
+}
+.inventario-container .header .search-filter .search-input {
+  position: relative;
+  width: 250px;
+}
+.inventario-container .header .search-filter .search-input input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+.inventario-container .header .search-filter .search-input .search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+.inventario-container .productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.inventario-container .productos-grid .producto-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.inventario-container .productos-grid .producto-card .producto-imagen {
+  width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.inventario-container .productos-grid .producto-card .producto-info {
+  padding: 1rem;
+}
+.inventario-container .productos-grid .producto-card .producto-info .producto-nombre {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.inventario-container .productos-grid .producto-card .producto-info .producto-disponibles {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .inventario-container .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .inventario-container .header .search-filter {
+    flex-direction: column;
+  }
+  .inventario-container .header .search-filter .categorias-select,
+  .inventario-container .header .search-filter .search-input {
+    width: 100%;
+  }
+  .inventario-container .productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}/*# sourceMappingURL=inventario.css.map */
