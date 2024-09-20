@@ -86,7 +86,7 @@ const Login = () => {
             </div>
 
             <button type='submit' className='btn flex'>
-              <span>Iniciar sesión </span>
+             <span>Iniciar sesión </span>
               <AiOutlineSwapRight className='icon'/>
             </button>
 

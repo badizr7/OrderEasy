@@ -13,7 +13,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { BsTrophy } from "react-icons/bs";
 
 
-const Sidebar = () => {
+function Sidebar () {
     return (
         <div className="sideBar grid">
             <div className="logoDiv flex">
