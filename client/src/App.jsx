@@ -1,35 +1,23 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './Components/Login/Login';
 import Dashboard from './Components/Dashboard/Dashboard';
+import './App.scss';
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Navigate
-} from 'react-router-dom'
+const App = () => {
+  const isAuthenticated = true; // Esto debería ser reemplazado por tu lógica de autenticación real
 
-// Creamos el enrutador
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Navigate to="/login" /> // Redirige a "/login"
-  },
-  {
-    path: '/login',
-    element: <div><Login/></div>
-  },
-  {
-    path: '/dashboard',
-    element: <div><Dashboard/></div>
-  }
-])
-
-function App() {
   return (
-    <div>
-      <RouterProvider router={router}/>
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route 
+          path="/*" 
+          element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} 
+        />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;

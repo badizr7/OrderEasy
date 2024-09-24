@@ -1,61 +1,39 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-
-.main-content {
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.top-bar {
+.inventario-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  height: 100vh;
+  background-color: var(--bgColor);
 }
-
-.create-product {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-.search-bar select, .search-bar input {
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.product-card {
-  background-color: white;
-  border-radius: 5px;
-  padding: 15px;
+.inventario-container .content {
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-.product-image {
-  width: 100%;
-  height: 150px;
-  background-color: #f0f0f0;
-  margin-bottom: 10px;
+.inventario-container .content .textDiv {
+  margin-bottom: 2rem;
+}
+.inventario-container .content .textDiv .Tittle {
+  font-size: 1.5rem;
+  color: var(--textColor);
+}
+.inventario-container .content .productList .sectionTitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--textColor);
+}
+.inventario-container .content .productList .products {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.inventario-container .content .productList .actionButton {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--PrimaryColor);
+  color: var(--whiteColor);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.inventario-container .content .productList .actionButton:hover {
+  background-color: var(--HoverColor);
 }/*# sourceMappingURL=inventario.css.map */

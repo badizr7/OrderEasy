@@ -1,70 +1,50 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import './sidebar.css'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './Sidebar.scss';
 
-//Importar Logo
-import logo from '../assets/LoginAssets/logo.png'
-
-//Importar Iconos
+// Importar Logo e Iconos
+import logo from '../assets/LoginAssets/logo.png';
 import { IoMdSpeedometer } from "react-icons/io";
-import { MdDeliveryDining } from "react-icons/md";
-import { MdOutlineExplore } from "react-icons/md";
-import { FaRegUserCircle } from "react-icons/fa";
+import { MdDeliveryDining, MdOutlineExplore } from "react-icons/md";
 import { BsTrophy } from "react-icons/bs";
 
+const Sidebar = () => {
+  return (
+    <aside className="sidebar">
+      <div className="logo">
+        <img src={logo} alt="OrderEasy Logo" />
+      </div>
+      <nav>
+        <h3>Menú Principal</h3>
+        <ul>
+          <li>
+            <NavLink to="/" end>
+              <IoMdSpeedometer className="icon" />
+              Dashboard
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/balance">
+              <MdDeliveryDining className="icon" />
+              Balance
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/inventario">
+              <MdOutlineExplore className="icon" />
+              Inventario
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/estadisticas">
+              <BsTrophy className="icon" />
+              Estadísticas
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  );
+};
 
-function Sidebar () {
-    return (
-        <div className="sideBar grid">
-            <div className="logoDiv flex">
-                <Link to={"/"}>
-                    <img src={logo} alt="Image Name" />
-                </Link>
-            </div>
-
-            <div className="menuDiv">
-                <h3 className="divTitle">
-                    Menu Principal
-                </h3>
-                <ul className="menuList grid">
-                    <li className="listItem">
-                        <Link to="/" className="menuLink flex">
-                            <IoMdSpeedometer className="icon" />
-                            <h3 className="smallText">
-                                Dashboard
-                            </h3>
-                        </Link>
-                    </li>
-
-                    <li className="listItem">
-                        <Link to="/Balance" className="menuLink flex">
-                            <BsTrophy className="icon" />
-                            <h3 className="smallText">
-                                Balance
-                            </h3>
-                        </Link>
-                    </li>
-
-                    <li className="listItem">
-                        <Link to="/Inventario" className="menuLink flex">
-                            <MdOutlineExplore className="icon" />
-                            <h3 className="smallText">
-                                Inventario
-                            </h3>
-                        </Link>
-                    </li>
-                    <li className="listItem">
-                        <Link to="/Estadisticas" className="menuLink flex">
-                            <MdDeliveryDining className="icon" />
-                            <h3 className="smallText">
-                                Estadisticas
-                            </h3>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-            
-        </div>
-    )
-}
-export default Sidebar
+export default Sidebar;
