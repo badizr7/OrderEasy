@@ -1,48 +1,60 @@
 .inventario-container {
-  display: flex;               // Usar flexbox
-  justify-content: center;     // Centrar horizontalmente
-  align-items: center;         // Centrar verticalmente
-  height: 100vh;              // Ocupa toda la altura de la ventana
-  background-color: var(--bgColor); // Ajusta según sea necesario
-
-  .content {
-      text-align: center;      // Centrar el texto dentro del contenedor
-
-      .textDiv {
-          margin-bottom: 2rem; // Espaciado inferior
-          
-          .Tittle {
-              font-size: 1.5rem; // Tamaño de fuente del título
-              color: var(--textColor); // Color del texto
-          }
+    display: flex; // Usa flexbox para alinear el contenido del contenedor
+    flex-direction: column; // Alineación vertical de los elementos dentro del contenedor (opcional)
+    padding: 2rem; // Espaciado interno para separar el contenido de los bordes
+    flex: 1; // Ocupa todo el espacio disponible al lado del sidebar
+    background-color: #ffffff; // Color de fondo del contenedor principal
+  
+    .content {
+      flex: 1; // Asegura que este contenedor ocupe todo el espacio restante
+      display: flex; // Usa flexbox para alinear el contenido interno
+      flex-direction: column; // Alineación vertical de los elementos
+      justify-content: center; // Centra verticalmente el contenido
+    }
+  
+    .textDiv {
+      margin-bottom: 1rem; // Espacio inferior para separar de otros elementos
+  
+      .Tittle {
+        font-size: 1.5rem; // Tamaño de fuente para el título
+        font-weight: bold; // Hace que el texto sea negrita
+        color: #1e40af; // Color principal para mantener la coherencia con el resto del diseño
       }
-
-      .productList {
-          .sectionTitle {
-              font-size: 1.25rem; // Tamaño de fuente para la sección de productos
-              margin-bottom: 1rem; // Espaciado inferior
-              color: var(--textColor); // Color del texto
-          }
-
-          .products {
-              list-style-type: none; // Sin puntos en la lista
-              padding: 0;            // Sin padding
-              margin-bottom: 1.5rem; // Espaciado inferior
-          }
-
-          .actionButton {
-              padding: 0.75rem 1.5rem; // Padding para el botón
-              background-color: var(--PrimaryColor); // Color de fondo del botón
-              color: var(--whiteColor); // Color del texto del botón
-              border: none;              // Sin borde
-              border-radius: 0.25rem;    // Bordes redondeados
-              cursor: pointer;           // Cambiar cursor al pasar por encima
-              transition: background-color 0.3s ease; // Transición suave
-
-              &:hover {
-                  background-color: var(--HoverColor); // Color en hover
-              }
-          }
+    }
+  
+    .productList {
+      margin-top: 2rem; // Espacio superior para separar del contenido anterior
+  
+      .sectionTitle {
+        font-size: 1.25rem; // Tamaño de fuente para el título de la sección de productos
+        font-weight: 600; // Peso de la fuente para mayor énfasis
+        color: #4b5563; // Color secundario para el título de la sección
       }
+  
+      .products {
+        list-style-type: none; // Elimina el estilo de lista predeterminado
+        padding-left: 0; // Elimina el padding a la izquierda
+  
+        li {
+          margin-bottom: 0.5rem; // Espacio inferior entre los elementos de la lista
+          font-size: 1rem; // Tamaño de fuente para cada elemento de producto
+          color: #4b5563; // Color del texto para los elementos de la lista
+        }
+      }
+  
+      .actionButton {
+        background-color: #22c55e; // Color de fondo del botón de acción
+        color: white; // Color del texto del botón
+        padding: 0.5rem 1rem; // Espaciado interno del botón
+        border: none; // Sin borde
+        border-radius: 0.25rem; // Bordes redondeados para suavizar el aspecto
+        cursor: pointer; // Cambia el cursor al pasar sobre el botón
+        transition: background-color 0.3s ease; // Suaviza el cambio de color al pasar el mouse
+  
+        &:hover {
+          background-color: darken(#22c55e, 10%); // Oscurece el color al pasar el mouse
+        }
+      }
+    }
   }
-}
+  

@@ -10,8 +10,8 @@ import './Dashboard.scss';
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      <Sidebar />
-      <div className="main-content">
+      <Sidebar />     
+      <div className="main-content">    
         <Routes>
           <Route path="/" element={<BodySection />} />
           <Route path="/balance" element={<Balance />} />

@@ -1,140 +1,91 @@
 // Variables
-$primary-color: #1e40af;
-$secondary-color: #4b5563;
-$background-color: #f3f4f6;
-$white: #ffffff;
-$green: #22c55e;
+$primary-color: #1e40af; // Color principal utilizado en el diseño
+$secondary-color: #4b5563; // Color secundario para texto y elementos
+$background-color: #f3f4f6; // Color de fondo de la página
+$white: #ffffff; // Color blanco para varios elementos
+$green: #22c55e; // Color verde utilizado en botones y elementos destacados
 
 // Main layout
-.inventory-page {
-  display: flex;
-  height: 100vh;
-  background-color: $background-color;
+.dashboard {
+  display: flex; // Usa flexbox para alinear el sidebar y el contenido principal
+  height: 100vh; // Asegúrate de que ocupe toda la altura de la ventana
+  background-color: $background-color; // Aplica el color de fondo a toda la página
 
   // Sidebar
   .sidebar {
-    width: 250px;
-    background-color: $white;
-    padding: 1.5rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-
-    .logo {
-      display: flex;
-      align-items: center;
-      margin-bottom: 2rem;
-
-      img {
-        width: 40px;
-        height: 40px;
-        margin-right: 0.5rem;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: $primary-color;
-      }
-    }
-
-    .menu {
-      h2 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 0;
-
-        li {
-          margin-bottom: 0.5rem;
-
-          a {
-            display: flex;
-            align-items: center;
-            color: $secondary-color;
-            text-decoration: none;
-            transition: color 0.3s ease;
-
-            &:hover, &.active {
-              color: $primary-color;
-            }
-
-            svg {
-              margin-right: 0.5rem;
-            }
-          }
-        }
-      }
-    }
+    width: 250px; // Define el ancho del sidebar
+    background-color: $white; // Color de fondo del sidebar
+    padding: 1.5rem; // Espaciado interno para que el contenido no esté pegado a los bordes
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); // Sombra para dar un efecto de profundidad
+    min-height: 100vh; // Asegura que el sidebar ocupe toda la altura de la ventana
   }
 
   // Main content
   .main-content {
-    flex: 1;
-    padding: 2rem;
+    flex: 1; // Permite que este contenedor tome todo el espacio restante
+    padding: 2rem; // Espaciado interno para el contenido
+    overflow-y: auto; // Permite el desplazamiento vertical si el contenido excede la altura visible
 
     .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
+      display: flex; // Usa flexbox para alinear elementos dentro de la barra superior
+      justify-content: space-between; // Espacia los elementos a los extremos
+      align-items: center; // Centra verticalmente los elementos
+      margin-bottom: 2rem; // Espacio inferior para separar la barra del contenido siguiente
 
       .create-product {
-        background-color: $green;
-        color: $white;
-        padding: 0.5rem 1rem;
-        border-radius: 0.25rem;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+        background-color: $green; // Color de fondo del botón
+        color: $white; // Color del texto del botón
+        padding: 0.5rem 1rem; // Espaciado interno del botón
+        border-radius: 0.25rem; // Bordes redondeados
+        border: none; // Sin borde
+        cursor: pointer; // Cambia el cursor al pasar sobre el botón
+        transition: background-color 0.3s ease; // Suaviza el cambio de color al pasar el mouse
 
         &:hover {
-          background-color: darken($green, 10%);
+          background-color: adjust-color($green, $lightness: -10%); // Oscurece el color al pasar el mouse
         }
       }
 
       .filters {
-        display: flex;
-        gap: 1rem;
+        display: flex; // Usa flexbox para alinear los filtros
+        gap: 1rem; // Espacio entre los filtros
 
         select, input {
-          padding: 0.5rem;
-          border: 1px solid #d1d5db;
-          border-radius: 0.25rem;
+          padding: 0.5rem; // Espaciado interno para inputs y selects
+          border: 1px solid #d1d5db; // Color del borde
+          border-radius: 0.25rem; // Bordes redondeados
         }
       }
     }
 
     .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.5rem;
+      display: grid; // Usa grid para organizar los productos
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // Crea columnas automáticas de mínimo 200px
+      gap: 1.5rem; // Espacio entre las tarjetas de productos
 
       .product-card {
-        background-color: $white;
-        border-radius: 0.5rem;
-        overflow: hidden;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: $white; // Color de fondo de la tarjeta
+        border-radius: 0.5rem; // Bordes redondeados
+        overflow: hidden; // Oculta el contenido que desborda
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra para efecto de profundidad
 
         .product-image {
-          height: 150px;
-          background-color: #e5e7eb;
+          height: 150px; // Altura fija para la imagen del producto
+          background-color: #e5e7eb; // Color de fondo si no hay imagen
         }
 
         .product-info {
-          padding: 1rem;
+          padding: 1rem; // Espaciado interno para la información del producto
 
           h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+            font-size: 1rem; // Tamaño de fuente del nombre del producto
+            font-weight: 600; // Peso de la fuente para mayor énfasis
+            margin-bottom: 0.25rem; // Espacio debajo del título
           }
 
           p {
-            font-size: 0.875rem;
-            color: $secondary-color;
+            font-size: 0.875rem; // Tamaño de fuente para la descripción del producto
+            color: $secondary-color; // Color del texto de la descripción
           }
         }
       }
