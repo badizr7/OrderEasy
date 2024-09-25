@@ -1,52 +1,176 @@
-.sidebar {
-  background-color: #bc0d0d; // Color de fondo del sidebar
-  color: #090808; // Color del texto
-  padding: 20px; // Espaciado interno
-  display: flex;
-  flex-direction: column; // Para que los elementos se alineen verticalmente
-  width: 250px; // Ancho del sidebar
-  min-height: 100vh; // Asegura que ocupe toda la altura de la ventana
+.sideBar {
+  /* Estilos para la barra lateral */
+  background: hsl(0%, 0%, 100%); /* Color blanco */
+  box-shadow: 1px 0px 4px rgb(190, 190, 190); /* Sombra en la barra lateral */
+  width: 18%; /* Ancho de la barra lateral */
+  height: 100%; /* Altura completa */
+  gap: 3rem; /* Espaciado entre elementos */
+  overflow: auto; /* Desbordamiento automático para el scroll */
 
-  .logo {
-    margin-bottom: 30px; // Espacio debajo del logo
+  .logoDiv {
+    /* Estilos para la sección del logo */
+    padding: 1.5rem 1.5rem 0; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    margin: auto; /* Centrar el logo */
+
     img {
-      max-width: 100%; // Ajusta la imagen al tamaño del contenedor
-      height: auto; // Mantiene la proporción de la imagen
+      max-width: 150px; /* Ancho máximo de la imagen */
+      margin-right: .5rem; /* Margen a la derecha */
+      border-radius: 2px; /* Bordes redondeados */
+      padding: .2rem; /* Espaciado interno */
+    }
+
+    h2 {
+      font-size: 1.5rem; /* Tamaño de fuente para h2 */
+      color: hsl(252, 100%, 11%); /* Color del texto usando la variable primaria */
     }
   }
 
-  nav {
-    width: 100%; // Asegura que el nav ocupe todo el ancho del sidebar
-
-    h3 {
-      margin-bottom: 20px; // Espacio debajo del título
-      font-size: 18px; // Tamaño de la fuente del título
+  .menuDiv {
+    /* Estilos para la sección del menú */
+    .divTitle {
+      font-size: 1.25rem; /* Tamaño de fuente del título del menú */
+      color: hsl(0%, 0%, 18%); /* Color del título */
+      padding: 0 1.5rem 1.5rem; /* Espaciado interno */
     }
 
-    ul {
-      list-style: none; // Sin estilo de lista
-      padding: 0; // Sin padding
+    .menuList {
+      /* Lista de elementos del menú */
+      .listItem {
+        padding: .2rem 1.5rem; /* Espaciado interno de cada item */
+        width: 100%; /* Ancho completo */
+        position: relative; /* Para el posicionamiento absoluto de pseudo-elementos */
 
-      li {
-        margin-bottom: 15px; // Espacio entre los elementos de la lista
+        &::before {
+          /* Estilo para el pseudo-elemento antes de cada item */
+          content: ''; /* Necesario para mostrar el pseudo-elemento */
+          height: 0%; /* Inicialmente no visible */
+          left: 0; /* Alineado a la izquierda */
+          width: 5px; /* Ancho de la línea de color */
+          bottom: 0; /* Posicionamiento al fondo del item */
+          border-top-right-radius: 10px; /* Bordes redondeados en la parte superior derecha */
+          border-bottom-right-radius: 10px; /* Bordes redondeados en la parte inferior derecha */
+          background: hsl(252, 100%, 11%); /* Color de la línea usando la variable primaria */
+          position: absolute; /* Posicionamiento absoluto dentro del item */
+        }
 
-        a {
-          display: flex; // Flexbox para alinear icono y texto
-          align-items: center; // Alinea verticalmente
-          color: #fff; // Color del texto
-          text-decoration: none; // Sin subrayado
-          padding: 10px; // Espaciado interno
-          border-radius: 5px; // Bordes redondeados
-          transition: background-color 0.3s; // Transición suave para el hover
-
-          &.active,
-          &:hover {
-            background-color: #23d9f1; // Color de fondo al pasar el mouse o estar activo
-          }
+        .menuLink {
+          /* Estilos para los enlaces del menú */
+          color: hsl(0 0% 66.3%); /* Color del texto */
+          font-weight: 550; /* Peso de la fuente */
+          transition: 0; /* Sin transición inicialmente */
 
           .icon {
-            margin-right: 12px; // Espacio entre el icono y el texto
-            font-size: 20px; // Tamaño del icono
+            margin-right: .5rem; /* Margen a la derecha del icono */
+          }
+        }
+
+        &:hover .menuLink {
+          /* Estilo para el enlace al pasar el mouse por encima */
+          color: hsl(252, 100%, 11%); /* Cambia el color del texto al color primario */
+          transition: 0; /* Sin transición en hover */
+        }
+
+        &:hover::before {
+          /* Efecto al pasar el mouse sobre el item */
+          height: 100%; /* Hace visible la línea al 100% de la altura del item */
+          transition: .3s ease; /* Transición suave para la línea */
+        }
+      }
+    }
+  }
+
+  .sideBarCard {
+    /* Estilos para tarjetas en la barra lateral */
+    width: 100%; /* Ancho completo */
+    padding: 1rem; /* Espaciado interno */
+    text-align: center; /* Centrando texto */
+    position: relative; /* Para el posicionamiento absoluto de iconos */
+
+    .icon {
+      /* Estilos para iconos dentro de las tarjetas */
+      position: absolute; /* Posicionamiento absoluto */
+      border: 10px solid hsl(0%, 0%, 100%); /* Borde blanco */
+      font-size: 3rem; /* Tamaño del icono */
+      border-radius: 50%; /* Icono redondo */
+      top: -8px; /* Posición superior */
+      right: 50%; /* Alineado al centro derecho */
+      transform: translate(50%); /* Centra el icono horizontalmente */
+      z-index: 100; /* Asegura que el icono esté por encima de otros elementos */
+    }
+  }
+}
+
+.smallText {
+  /* Estilos para texto pequeño */
+  font-size: 1.25rem; /* Tamaño de fuente pequeño */
+  font-weight: 500; /* Peso de la fuente */
+}
+
+// Diseño Responsive
+
+@media screen and (max-width: 820px) {
+  /* Estilos para pantallas con un ancho máximo de 820px */
+  .sideBar {
+    padding-bottom: 2rem; /* Espaciado inferior */
+    .sideBarCard {
+      display: none !important; /* Oculta las tarjetas en pantallas pequeñas */
+    }
+  }
+}
+
+@media screen and (max-width: 745px) {
+  /* Estilos para pantallas con un ancho máximo de 745px */
+  .sideBar {
+    .logoDiv {
+      text-align: center; /* Centra el logo */
+      margin: auto; /* Margen automático para centrar */
+      padding: 1.5rem .5rem 0; /* Espaciado interno modificado */
+
+      img {
+        max-width: 50px; /* Ancho máximo del logo reducido */
+        margin: 0; /* Sin margen */
+        border-radius: 10px; /* Bordes más redondeados */
+        padding: .5rem; /* Espaciado interno */
+      }
+
+      h2 {
+        display: none; /* Oculta el título en pantallas pequeñas */
+      }
+    }
+
+    .menuDiv {
+      .divTitle, .smallText {
+        display: none; /* Oculta el título y texto pequeño */
+
+        .menuList {
+          .listItem {
+            .menuLink {
+              justify-content: center; /* Centra los enlaces */
+              .icon {
+                font-size: 1.5rem; /* Aumenta el tamaño del icono */
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  /* Estilos para pantallas con un ancho máximo de 390px */
+  .sideBar {
+    .menuDiv {
+      .menuList {
+        .listItem {
+          padding: .2rem .5rem; /* Reduce el espaciado interno de los items */
+
+          .menuLink {
+            justify-content: center; /* Centra los enlaces */
+            .icon {
+              font-size: 1.25rem; /* Tamaño de icono reducido */
+            }
           }
         }
       }

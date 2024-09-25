@@ -1,27 +1,69 @@
-import React from 'react';
-import './inventario.scss'; // Asegúrate de que el archivo SCSS está en la ruta correcta
+import React, { useEffect } from "react";
+import './inventario.scss';
 
 const Inventario = () => {
-  console.log('Inventario Component Rendered'); // Para verificar que el componente se ha renderizado
+  useEffect(() => {
+    // Función para manejar el clic en "Crear Producto"
+    const createProductButton = document.querySelector(".create-product");
+    createProductButton.addEventListener("click", () => {
+      alert("Funcionalidad de crear producto aún no implementada");
+    });
+
+    // Función para manejar la activación de los elementos del menú
+    const menuItems = document.querySelectorAll(".menu-item");
+    menuItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        menuItems.forEach((i) => i.classList.remove("active"));
+        item.classList.add("active");
+      });
+    });
+
+    // Cleanup de los event listeners
+    return () => {
+      createProductButton.removeEventListener("click", () => {});
+      menuItems.forEach((item) => {
+        item.removeEventListener("click", () => {});
+      });
+    };
+  }, []);
+
+  // Datos de ejemplo para los productos
+  const products = [
+    { id: 1, name: "Producto A", available: 10 },
+    { id: 2, name: "Producto B", available: 5 },
+    { id: 3, name: "Producto C", available: 0 },
+    { id: 4, name: "Producto D", available: 2 },
+    { id: 5, name: "Producto E", available: 8 },
+    { id: 6, name: "Producto F", available: 3 },
+    { id: 7, name: "Producto G", available: 0 },
+    { id: 8, name: "Producto H", available: 12 },
+  ];
 
   return (
-    <div className="inventario-container">
-      {/* Contenido del inventario */}
-      <div className="content">
-        <div className="textDiv">
-          <h4 className='Tittle'>¡Descubre la forma más cómoda y segura de comprar productos tecnológicos con nuestra página web!</h4>
+    <div className="main-content">
+      <div className="top-bar">
+        <button className="create-product">Crear Producto</button>
+        <div className="search-bar">
+          <select>
+            <option>Categorías</option>
+          </select>
+          <input type="text" placeholder="Buscar Producto" />
         </div>
+      </div>
 
-        <div className="productList">
-          <h3 className="sectionTitle">Lista de Productos</h3>
-          <ul className="products">
-            <li>Producto 1: Laptop Gaming</li>
-            <li>Producto 2: Smartphone 5G</li>
-            <li>Producto 3: Auriculares Bluetooth</li>
-            <li>Producto 4: Monitor 4K</li>
-          </ul>
-          <button className="actionButton">Ver más productos</button>
-        </div>
+      <div className="product-grid">
+        {products.length === 0 ? (
+          <p>No hay productos disponibles</p>
+        ) : (
+          products.map(product => (
+            <div className="product-card" key={product.id}>
+              <div className="product-image"></div>
+              <h3>{product.name}</h3>
+              <p>Disponibles: {product.available}</p>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

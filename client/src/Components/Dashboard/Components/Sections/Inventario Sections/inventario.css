@@ -1,50 +1,91 @@
-.inventario-container {
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background-color: #f0f0f0;
+}
+
+.container {
   display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  flex: 1;
+  height: 100%;
+}
+
+.sidebar {
+  width: 200px;
   background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
-.inventario-container .content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+.logo {
+  width: 100px;
+  margin-bottom: 30px;
 }
-.inventario-container .textDiv {
-  margin-bottom: 1rem;
+
+.menu-item {
+  padding: 10px 0;
+  color: #333;
+  text-decoration: none;
+  display: block;
 }
-.inventario-container .textDiv .Tittle {
-  font-size: 1.5rem;
+
+.menu-item.active {
   font-weight: bold;
-  color: #1e40af;
+  color: #007bff;
 }
-.inventario-container .productList {
-  margin-top: 2rem;
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
 }
-.inventario-container .productList .sectionTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #4b5563;
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.inventario-container .productList .products {
-  list-style-type: none;
-  padding-left: 0;
-}
-.inventario-container .productList .products li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #4b5563;
-}
-.inventario-container .productList .actionButton {
-  background-color: #22c55e;
+
+.create-product {
+  background-color: #4CAF50;
   color: white;
-  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 0.25rem;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
-.inventario-container .productList .actionButton:hover {
-  background-color: #1a9a49;
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar select, .search-bar input {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=inventario.css.map */
