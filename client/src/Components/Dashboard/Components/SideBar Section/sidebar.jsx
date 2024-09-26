@@ -1,23 +1,20 @@
 import React from "react";
-import { NavLink } from "react-router-dom"; // Cambiar Link a NavLink
+import { NavLink } from "react-router-dom";
 import "./sidebar.css";
 
-// Importar Logo
+// Importar Iconos y Logo
 import logo from "../../../../LoginAssets/logo.png";
-
-// Importar Iconos
 import { IoMdSpeedometer } from "react-icons/io";
 import { MdDeliveryDining } from "react-icons/md";
 import { MdOutlineExplore } from "react-icons/md";
-import { FaRegUserCircle } from "react-icons/fa";
 import { BsTrophy } from "react-icons/bs";
 
 const Sidebar = () => {
   return (
     <div className="sideBar grid">
       <div className="logoDiv flex">
-        <NavLink to={"/"}>
-          <img src={logo} alt="Image Name" />
+        <NavLink to="/dashboard">
+          <img src={logo} alt="Logo" />
         </NavLink>
       </div>
 
@@ -25,9 +22,12 @@ const Sidebar = () => {
         <h3 className="divTitle">Menu Principal</h3>
         <ul className="menuList grid">
           <li className="listItem">
-            <NavLink to="/" className="menuLink flex" activeClassName="active">
-              {" "}
-              {/* Cambiar Link a NavLink */}
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                isActive ? "menuLink flex active" : "menuLink flex"
+              }
+            >
               <IoMdSpeedometer className="icon" />
               <h3 className="smallText">Dashboard</h3>
             </NavLink>
@@ -35,12 +35,11 @@ const Sidebar = () => {
 
           <li className="listItem">
             <NavLink
-              to="/balance"
-              className="menuLink flex"
-              activeClassName="active"
+              to="/dashboard/balance"
+              className={({ isActive }) =>
+                isActive ? "menuLink flex active" : "menuLink flex"
+              }
             >
-              {" "}
-              {/* Cambiar Link a NavLink */}
               <BsTrophy className="icon" />
               <h3 className="smallText">Balance</h3>
             </NavLink>
@@ -48,12 +47,11 @@ const Sidebar = () => {
 
           <li className="listItem">
             <NavLink
-              to="/inventario"
-              className="menuLink flex"
-              activeClassName="active"
+              to="/dashboard/inventario"
+              className={({ isActive }) =>
+                isActive ? "menuLink flex active" : "menuLink flex"
+              }
             >
-              {" "}
-              {/* Cambiar Link a NavLink */}
               <MdOutlineExplore className="icon" />
               <h3 className="smallText">Inventario</h3>
             </NavLink>
@@ -61,14 +59,25 @@ const Sidebar = () => {
 
           <li className="listItem">
             <NavLink
-              to="/estadisticas"
-              className="menuLink flex"
-              activeClassName="active"
+              to="/dashboard/estadisticas"
+              className={({ isActive }) =>
+                isActive ? "menuLink flex active" : "menuLink flex"
+              }
             >
-              {" "}
-              {/* Cambiar Link a NavLink */}
               <MdDeliveryDining className="icon" />
-              <h3 className="smallText">Estadisticas</h3>
+              <h3 className="smallText">Estadísticas</h3>
+            </NavLink>
+          </li>
+
+          <li className="listItem">
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                isActive ? "menuLink flex active" : "menuLink flex"
+              }
+            >
+              <MdDeliveryDining className="icon" />
+              <h3 className="smallText">Salir</h3>
             </NavLink>
           </li>
         </ul>

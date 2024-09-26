@@ -15,14 +15,18 @@
 
     img {
       max-width: 150px; /* Ancho máximo de la imagen */
-      margin-right: .5rem; /* Margen a la derecha */
+      margin-right: 0.5rem; /* Margen a la derecha */
       border-radius: 2px; /* Bordes redondeados */
-      padding: .2rem; /* Espaciado interno */
+      padding: 0.2rem; /* Espaciado interno */
     }
 
     h2 {
       font-size: 1.5rem; /* Tamaño de fuente para h2 */
-      color: hsl(252, 100%, 11%); /* Color del texto usando la variable primaria */
+      color: hsl(
+        252,
+        100%,
+        11%
+      ); /* Color del texto usando la variable primaria */
     }
   }
 
@@ -37,20 +41,24 @@
     .menuList {
       /* Lista de elementos del menú */
       .listItem {
-        padding: .2rem 1.5rem; /* Espaciado interno de cada item */
+        padding: 0.2rem 1.5rem; /* Espaciado interno de cada item */
         width: 100%; /* Ancho completo */
         position: relative; /* Para el posicionamiento absoluto de pseudo-elementos */
 
         &::before {
           /* Estilo para el pseudo-elemento antes de cada item */
-          content: ''; /* Necesario para mostrar el pseudo-elemento */
+          content: ""; /* Necesario para mostrar el pseudo-elemento */
           height: 0%; /* Inicialmente no visible */
           left: 0; /* Alineado a la izquierda */
           width: 5px; /* Ancho de la línea de color */
           bottom: 0; /* Posicionamiento al fondo del item */
           border-top-right-radius: 10px; /* Bordes redondeados en la parte superior derecha */
           border-bottom-right-radius: 10px; /* Bordes redondeados en la parte inferior derecha */
-          background: hsl(252, 100%, 11%); /* Color de la línea usando la variable primaria */
+          background: hsl(
+            252,
+            100%,
+            11%
+          ); /* Color de la línea usando la variable primaria */
           position: absolute; /* Posicionamiento absoluto dentro del item */
         }
 
@@ -61,20 +69,24 @@
           transition: 0; /* Sin transición inicialmente */
 
           .icon {
-            margin-right: .5rem; /* Margen a la derecha del icono */
+            margin-right: 0.5rem; /* Margen a la derecha del icono */
           }
         }
 
         &:hover .menuLink {
           /* Estilo para el enlace al pasar el mouse por encima */
-          color: hsl(252, 100%, 11%); /* Cambia el color del texto al color primario */
+          color: hsl(
+            252,
+            100%,
+            11%
+          ); /* Cambia el color del texto al color primario */
           transition: 0; /* Sin transición en hover */
         }
 
         &:hover::before {
           /* Efecto al pasar el mouse sobre el item */
           height: 100%; /* Hace visible la línea al 100% de la altura del item */
-          transition: .3s ease; /* Transición suave para la línea */
+          transition: 0.3s ease; /* Transición suave para la línea */
         }
       }
     }
@@ -125,13 +137,13 @@
     .logoDiv {
       text-align: center; /* Centra el logo */
       margin: auto; /* Margen automático para centrar */
-      padding: 1.5rem .5rem 0; /* Espaciado interno modificado */
+      padding: 1.5rem 0.5rem 0; /* Espaciado interno modificado */
 
       img {
         max-width: 50px; /* Ancho máximo del logo reducido */
         margin: 0; /* Sin margen */
         border-radius: 10px; /* Bordes más redondeados */
-        padding: .5rem; /* Espaciado interno */
+        padding: 0.5rem; /* Espaciado interno */
       }
 
       h2 {
@@ -140,7 +152,8 @@
     }
 
     .menuDiv {
-      .divTitle, .smallText {
+      .divTitle,
+      .smallText {
         display: none; /* Oculta el título y texto pequeño */
 
         .menuList {
@@ -164,7 +177,7 @@
     .menuDiv {
       .menuList {
         .listItem {
-          padding: .2rem .5rem; /* Reduce el espaciado interno de los items */
+          padding: 0.2rem 0.5rem; /* Reduce el espaciado interno de los items */
 
           .menuLink {
             justify-content: center; /* Centra los enlaces */
