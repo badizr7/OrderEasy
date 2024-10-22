@@ -121,7 +121,6 @@
   .sideBar .logoDiv h2 {
     display: none; /* Oculta el título en pantallas pequeñas */
   }
-<<<<<<< Updated upstream
   .sideBar .menuDiv .divTitle, .sideBar .menuDiv .smallText {
     display: none; /* Oculta el título y texto pequeño */
   }
@@ -129,18 +128,6 @@
     justify-content: center; /* Centra los enlaces */
   }
   .sideBar .menuDiv .divTitle .menuList .listItem .menuLink .icon, .sideBar .menuDiv .smallText .menuList .listItem .menuLink .icon {
-=======
-  .sideBar .menuDiv .divTitle,
-  .sideBar .menuDiv .smallText {
-    display: none; /* Oculta el título y texto pequeño */
-  }
-  .sideBar .menuDiv .divTitle .menuList .listItem .menuLink,
-  .sideBar .menuDiv .smallText .menuList .listItem .menuLink {
-    justify-content: center; /* Centra los enlaces */
-  }
-  .sideBar .menuDiv .divTitle .menuList .listItem .menuLink .icon,
-  .sideBar .menuDiv .smallText .menuList .listItem .menuLink .icon {
->>>>>>> Stashed changes
     font-size: 1.5rem; /* Aumenta el tamaño del icono */
   }
 }
